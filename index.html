@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!--section-->
+    <div class="container">
+        <!--Header-->
+        <h1 class="question">In web design, what does CSS stand for?</h1>
+        <!--options-->
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'A')">
+                <span class="Ans">A</span>
+                <span class="text">Counter Strike: Source</span>
+            </div>
+            <div class="option" onclick="checkAnswer(this, 'B')">
+                <span class="Ans">B</span>
+                <span class="text">Corrective Style Sheet</span>
+            </div>
+            <div class="option" onclick="checkAnswer(this, 'C')">
+                <span class="Ans">C</span>
+                <span class="text">Computer Style Sheet</span>
+            </div>
+            <div class="option" onclick="checkAnswer(this, 'D')">
+                <span class="Ans">D</span>
+                <span class="text">Cascading Style Sheet</span>
+            </div>
+        </div>
+    </div>
+</body>
+<!--javascript-->
+<script>
+    function checkAnswer(element, answer) {
+    const correctAnswer = 'D';
+    const options = document.querySelectorAll('.option');
+    
+    options.forEach(option => {
+        if (option.querySelector('.Ans').innerText === correctAnswer) {
+            option.classList.add('correct');
+        } else {
+            option.classList.add('incorrect');
+        }
+        option.style.pointerEvents = 'none';
+    });
+}
+</script>
+
+</html>
